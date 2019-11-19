@@ -8,10 +8,17 @@ type Character {
     id: ${GraphQLString}
     name: String
     description: String
-    thumbnail: String
+    thumbnail: Thumbnail
     favorite: Boolean
     modified1: String
     comics(first: Int, offset: Int): [Comic]
+    series(first: Int, offset: Int): [Serie]
+    events(first: Int, offset: Int): [Event]
+}
+
+type Thumbnail {
+    path: String
+    extension: String
 }
 
 type Comic {
@@ -21,6 +28,25 @@ type Comic {
     favorite: Boolean
 }
 
+type Serie {
+    available: Int
+    collectionURI: String
+    items(first: Int, offset: Int): [Item]
+    returned: Int
+}
+
+type Item {
+    resourceURI: String
+    name: String
+    type: String
+}
+
+type Event {
+    available: Int
+    collectionURI: String
+    items(first: Int, offset: Int): [Item]
+    returned: Int
+}
 type Mutation {
     updateCharacter(id: Int, input: CharacterInput): [Character]
     updateComic(id: Int, input: ComicInput): Comic

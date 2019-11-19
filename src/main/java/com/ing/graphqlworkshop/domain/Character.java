@@ -2,7 +2,7 @@ package com.ing.graphqlworkshop.domain;
 
 import java.util.List;
 
-public class Hero {
+public class Character {
     private int id;
     private String name;
     private String description;
