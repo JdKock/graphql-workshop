@@ -1,0 +1,38 @@
+
+type Query {
+    characters: [Character]
+    character(id: Int): Character
+  }
+
+type Character {
+    id: ${GraphQLString}
+    name: String
+    description: String
+    thumbnail: String
+    favorite: Boolean
+    modified1: String
+    comics(first: Int, offset: Int): [Comic]
+}
+
+type Comic {
+    id: Int
+    title: String
+    description: String
+    favorite: Boolean
+}
+
+type Mutation {
+    updateCharacter(id: Int, input: CharacterInput): [Character]
+    updateComic(id: Int, input: ComicInput): Comic
+
+    setFavouriteCharacter(id: Int): Character
+    setFavouriteComic(id: Int): Character
+}
+
+input CharacterInput {
+    favorite: Boolean!
+}
+
+input ComicInput {
+    favorite: Boolean!
+}
