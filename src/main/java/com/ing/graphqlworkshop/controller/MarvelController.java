@@ -17,16 +17,6 @@ import static graphql.schema.idl.RuntimeWiring.newRuntimeWiring;
 @EnableAutoConfiguration
 public class MarvelController {
 
-    @RequestMapping("/hello")
-    @ResponseBody
-    public String sayHello() {
-        return "Hello World Developer!!!";
-    }
-
-//    @Override
-//    protected GraphQLConfiguration getConfiguration() {
-//        return GraphQLConfiguration.with(createSchema()).build();
-//    }
     @RequestMapping("/graphql")
     @ResponseBody
     private GraphQLSchema createSchema() {
