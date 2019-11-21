@@ -1,19 +1,19 @@
 
 type Query {
-    characters: [Character]
-    character(id: Int): Character
+    characters(count: Int!): [Character]
+    character(id: Int!): Character
   }
 
 type Character {
-    id: ${GraphQLString}
+    id: String
     name: String
     description: String
     thumbnail: Thumbnail
-    favorite: Boolean
-    modified1: String
-    comics(first: Int, offset: Int): [Comic]
-    series(first: Int, offset: Int): [Serie]
-    events(first: Int, offset: Int): [Event]
+#    favorite: Boolean
+    modified: String
+#    comics(first: Int, offset: Int): [Comic]
+#    series(first: Int, offset: Int): [Serie]
+#    events(first: Int, offset: Int): [Event]
 }
 
 type Thumbnail {
@@ -47,13 +47,14 @@ type Event {
     items(first: Int, offset: Int): [Item]
     returned: Int
 }
-type Mutation {
-    updateCharacter(id: Int, input: CharacterInput): [Character]
-    updateComic(id: Int, input: ComicInput): Comic
 
-    setFavouriteCharacter(id: Int): Character
-    setFavouriteComic(id: Int): Character
-}
+#type Mutation {
+#    updateCharacter(id: Int, input: CharacterInput): [Character]
+#    updateComic(id: Int, input: ComicInput): Comic
+
+#    setFavouriteCharacter(id: Int): Character
+#    setFavouriteComic(id: Int): Character
+#}
 
 input CharacterInput {
     favorite: Boolean!

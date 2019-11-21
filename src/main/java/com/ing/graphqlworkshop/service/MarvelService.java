@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-//@Service
+@Service
 public class MarvelService {
 
     public List<Character> getAllCharacters(int count) {
@@ -15,6 +15,6 @@ public class MarvelService {
     }
 
     public Optional<Character> getCharacter(int id) {
-        return Optional.empty();
+        return Optional.of(new Character());
     }
 }
