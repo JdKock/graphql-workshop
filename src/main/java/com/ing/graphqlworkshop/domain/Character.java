@@ -1,12 +1,12 @@
 package com.ing.graphqlworkshop.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import java.util.List;
 
 @Data
-@NoArgsConstructor
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Character {
     private int id;
     private String name;
@@ -14,9 +14,9 @@ public class Character {
     private String modified;
     private Thumbnail thumbnail;
     private String resourceURI;
-    private List<Comic> comics;
-    private List<Serie> series;
-    private List<Story> stories;
-    private List<Event> events;
+    private Resource comics;
+//    private Resource series;
+    private Resource stories;
+    private Resource events;
     private List<Url> urls;
 }

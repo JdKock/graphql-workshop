@@ -1,10 +1,11 @@
 package com.ing.graphqlworkshop.domain;
 
-import java.util.List;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import lombok.Data;
 
+@Data
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Serie {
-    private int available;
-    private String collectionURI;
-    private List<Item> items;
-    private int returned;
+    private int id;
+    private String title;
 }

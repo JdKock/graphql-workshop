@@ -1,8 +1,13 @@
 package com.ing.graphqlworkshop.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import lombok.Data;
+
 import java.util.List;
 
-public class Event {
+@Data
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class Resource {
     private int available;
     private String collectionURI;
     private List<Item> items;

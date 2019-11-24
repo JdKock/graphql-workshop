@@ -1,6 +1,5 @@
-
 type Query {
-    characters(count: Int!): [Character]
+    characters(limit: Int!): [Character]
     character(id: Int!): Character
   }
 
@@ -8,12 +7,14 @@ type Character {
     id: String
     name: String
     description: String
-    thumbnail: Thumbnail
-#    favorite: Boolean
     modified: String
-#    comics(first: Int, offset: Int): [Comic]
-#    series(first: Int, offset: Int): [Serie]
-#    events(first: Int, offset: Int): [Event]
+    thumbnail: Thumbnail
+    resourceURI: String
+    series(id: Int): [Serie]
+    comics: Resource
+    stories: Resource
+    events: Resource
+    urls: [Url]
 }
 
 type Thumbnail {
@@ -21,17 +22,10 @@ type Thumbnail {
     extension: String
 }
 
-type Comic {
-    id: Int
-    title: String
-    description: String
-    favorite: Boolean
-}
-
-type Serie {
+type Resource {
     available: Int
     collectionURI: String
-    items(first: Int, offset: Int): [Item]
+    items: [Item]
     returned: Int
 }
 
@@ -41,25 +35,12 @@ type Item {
     type: String
 }
 
-type Event {
-    available: Int
-    collectionURI: String
-    items(first: Int, offset: Int): [Item]
-    returned: Int
+type Url {
+    type: String
+    url: String
 }
 
-#type Mutation {
-#    updateCharacter(id: Int, input: CharacterInput): [Character]
-#    updateComic(id: Int, input: ComicInput): Comic
-
-#    setFavouriteCharacter(id: Int): Character
-#    setFavouriteComic(id: Int): Character
-#}
-
-input CharacterInput {
-    favorite: Boolean!
-}
-
-input ComicInput {
-    favorite: Boolean!
+type Serie {
+    id: Int
+    title: String
 }
