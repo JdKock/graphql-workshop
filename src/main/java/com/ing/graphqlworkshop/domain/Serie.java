@@ -8,4 +8,10 @@ import lombok.Data;
 public class Serie {
     private int id;
     private String title;
+    private String description;
+    private int startYear;
+    private int endYear;
+    private String rating;
+    private String type;
+    private String modified;
 }

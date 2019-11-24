@@ -1,4 +1,14 @@
-### Feat: Add getSeries (HEAD -> master)
+### Feat: Add new fields to Serie type (HEAD -> master)
+>Sun, 24 Nov 2019 20:13:01 +0100
+
+>Author: Jeroen de Kock (jeroen.de.kock@ing.com)
+
+>Commiter: Jeroen de Kock (jeroen.de.kock@ing.com)
+
+
+
+
+### Feat: Add getSeries (origin/master)
 >Sun, 24 Nov 2019 19:35:04 +0100
 
 >Author: Jeroen de Kock (jeroen.de.kock@ing.com)
@@ -8,7 +18,7 @@
 
 
 
-### Fix: Use new GraphQL dependency (origin/master)
+### Fix: Use new GraphQL dependency
 >Thu, 21 Nov 2019 20:21:28 +0100
 
 >Author: Jeroen de Kock (jeroen.de.kock@ing.com)

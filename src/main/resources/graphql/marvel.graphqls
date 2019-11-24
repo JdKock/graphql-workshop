@@ -10,7 +10,7 @@ type Character {
     modified: String
     thumbnail: Thumbnail
     resourceURI: String
-    series(id: Int): [Serie]
+    series(id: Int!): [Serie]
     comics: Resource
     stories: Resource
     events: Resource
@@ -43,4 +43,10 @@ type Url {
 type Serie {
     id: Int
     title: String
+    description: String
+    startYear: Int
+    endYear: Int
+    rating: String
+    type: String
+    modified: String
 }
